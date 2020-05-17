@@ -823,6 +823,10 @@ public Action:Event_SetupEnd(Handle:event,const String:name[],bool:dontBroadcast
 
 public Action:Event_RoundStart(Handle:event,const String:name[],bool:dontBroadcast)
 {
+	// Reset global last sound and last admin sound
+	globalLastSound = 0.0;
+	globalLastAdminSound = 0.0;
+
 	runSoundEvent(event,"round","start",0,0,-1);
 
 	if (GetConVarBool(cvarsoundlimitround))
